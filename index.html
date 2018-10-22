@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>diffengine</title>
+    <meta name="description" content="Web Archiving">
+    <meta name="author" content="Ed Summers">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/white.css" id="theme">
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <style>
+      a {
+        text-decoration: none;
+      }
+      .reveal figcaption {
+        font-size: 14pt;
+      }
+      .citations {
+        text-align: left;
+        font-size: 14pt;
+      }
+      .reveal sup { 
+        font-size: 14pt;
+        vertical-align: super;
+      }
+    </style>
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+
+        <section class="title">
+          <div>
+            <h2>working with<br><em>and against</em><br>web archives</h2>
+          <br>
+          <p style="font-size: smaller;">
+            Ed Summers<br>
+            edsu@umd.edu<br>
+            <a href="http://mith.umd.edu">MITH</a><br>
+          </p>
+        </section>
+
+        <section>
+          <img src="images/dh.png">
+          <aside class="notes">
+          Going to look at using web archiving in your work as a humanist, and
+          also as an example of how to think about the framing of 
+          web archives.
+          </aside>
+        </section>
+
+        <section>
+          <img src="images/archives.jpg">
+        </section>
+
+        <section>
+          <img src="images/servers.jpg">
+          <aside class="notes">
+          </aside>
+        </section>
+
+        <section>
+          <a href="https://web.archive.org"><img width="70%" src="images/ia.png"></a>
+        </section>
+
+        <section>
+          Wayback, before and after: click for an example
+        </section>
+
+        <section>
+          Prominent example of why web archives matter.
+        </section>
+
+        <section>
+          Local example: Amy's collection at UMD.
+        </section>
+
+        <section>
+          Exercise :
+        </section>
+
+        <section>
+          Back of the envelope as a transition to Webrecorder.
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: false,
+        progress: false,
+        history: true,
+        center: true,
+        transition: 'fade', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
