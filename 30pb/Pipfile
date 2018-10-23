@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 pillow = "*"
-iiif = "%"
+iiif = "*"
 
 [dev-packages]
 

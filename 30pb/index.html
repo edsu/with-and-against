@@ -1,7 +1,7 @@
-<!-- Created from HTML template iiif/templates/static_osd.html in https://github.com/zimeon/iiif -->
 <html>
 <head>
-  <title>30 Petabytes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>30PB in 2TB drives</title>
   <script src="openseadragon.min.js"></script>
   <style>
 
@@ -28,9 +28,11 @@
 <p id="desc">What 30PB (current size of the Internet Archive) looks like in
 2TB hard drives.</p>
 
-<div id="image"></div>  
+<div id="image">
+</div>  
+
 <script>
-//<![CDATA[
+
 function initOpenSeadragon() {
   OpenSeadragon({
     id: "image",
@@ -40,9 +42,11 @@ function initOpenSeadragon() {
     crossOriginPolicy: false,
   });
 }
+
 window.onload = initOpenSeadragon;
-document.addEventListener("page:load", initOpenSeadragon); // Initialize when using turbolinks
-//]]>
+
+document.addEventListener("page:load", initOpenSeadragon);
+
 </script>
 
 </body>
