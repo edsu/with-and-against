@@ -1,0 +1,49 @@
+<!-- Created from HTML template iiif/templates/static_osd.html in https://github.com/zimeon/iiif -->
+<html>
+<head>
+  <title>30 Petabytes</title>
+  <script src="openseadragon.min.js"></script>
+  <style>
+
+    body {
+      font-family: Helvetica;
+    }
+
+    #image {
+      margin-left: auto;
+      margin-right: auto;
+      width: 1000px;
+      height: 925px;
+      border: thin solid gray;
+    }
+
+    #desc {
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+
+<p id="desc">What 30PB (current size of the Internet Archive) looks like in
+2TB hard drives.</p>
+
+<div id="image"></div>  
+<script>
+//<![CDATA[
+function initOpenSeadragon() {
+  OpenSeadragon({
+    id: "image",
+    minZoomImageRatio: 1,
+    prefixUrl: "images/", // OSD needs trailing slash
+    tileSources: "hds/info.json",
+    crossOriginPolicy: false,
+  });
+}
+window.onload = initOpenSeadragon;
+document.addEventListener("page:load", initOpenSeadragon); // Initialize when using turbolinks
+//]]>
+</script>
+
+</body>
+</html>
