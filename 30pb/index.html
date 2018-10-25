@@ -1,53 +1,71 @@
 <html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>30PB in 2TB drives</title>
-  <script src="openseadragon.min.js"></script>
-  <style>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>30PB in 2TB drives</title>
+    <script src="openseadragon.min.js"></script>
+    <style>
+      body {
+        font-family: Helvetica;
+      }
+      #image {
+        margin-left: auto;
+        margin-right: auto;
+        width: 1000px;
+        height: 925px;
+        border: thin solid gray;
+      }
+      #desc {
+        text-align: center;
+      }
+      #tip {
+        text-align: center;
+        font-style: italic;
+      }
+      #tip.hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
 
-    body {
-      font-family: Helvetica;
+    <br>
+
+    <p id="desc">
+      What 30PB (current size of the Internet Archive) looks like in 2TB hard drives.
+    </p>
+
+    <div id="image">
+    </div>  
+
+    <p id="tip" class="hidden">
+    pro-tip: use full-screen mode!
+    </p>
+
+    <script>
+
+    function initOpenSeadragon() {
+      OpenSeadragon({
+        id: "image",
+        minZoomImageRatio: 1,
+        prefixUrl: "images/", // OSD needs trailing slash
+        tileSources: "hds/info.json",
+        crossOriginPolicy: false,
+      });
     }
 
-    #image {
-      margin-left: auto;
-      margin-right: auto;
-      width: 1000px;
-      height: 925px;
-      border: thin solid gray;
+    window.onload = function() {
+      initOpenSeadragon()
+      e = document.getElementById('image')
+      e.addEventListener('mouseover', function() {
+        document.getElementById('tip').classList.remove('hidden');
+      })
+      e.addEventListener('mouseout', function() {
+        document.getElementById('tip').classList.add('hidden');
+      })
     }
+    document.addEventListener("page:load", initOpenSeadragon);
 
-    #desc {
-      text-align: center;
-    }
+    </script>
 
-  </style>
-</head>
-<body>
-
-<p id="desc">What 30PB (current size of the Internet Archive) looks like in
-2TB hard drives.</p>
-
-<div id="image">
-</div>  
-
-<script>
-
-function initOpenSeadragon() {
-  OpenSeadragon({
-    id: "image",
-    minZoomImageRatio: 1,
-    prefixUrl: "images/", // OSD needs trailing slash
-    tileSources: "hds/info.json",
-    crossOriginPolicy: false,
-  });
-}
-
-window.onload = initOpenSeadragon;
-
-document.addEventListener("page:load", initOpenSeadragon);
-
-</script>
-
-</body>
+  </body>
 </html>
